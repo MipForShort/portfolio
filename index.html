@@ -89,12 +89,14 @@
         <span id="typed"></span>
     </p>
     <div class="flex justify-center space-x-4">
-      <a href="#proyectos" class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
-        Ver Proyectos</a>
-      <a href="#contacto" class="bg-gray-600 hover:bg-gray-500 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
-        Contacto</a>
-      <a href="cv/Mario Meade CV ESP.pdf" download class="px-6 py-3 bg-green-600 hover:bg-green-500 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap">
-      Descargar CV</a>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+    <a href="#proyectos" class="min-w-[140px] text-center bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+    Ver Proyectos</a>
+    <a href="#contacto" class="min-w-[140px] text-center bg-gray-600 hover:bg-gray-500 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+    Contacto</a>
+    <a href="cv/Mario Meade CV ESP.pdf" download class="min-w-[140px] text-center px-6 py-3 bg-green-600 hover:bg-green-500 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+    Descargar CV</a>
+</div>
     </div>
   </div>
 </section>
@@ -271,6 +273,54 @@ habilidades.forEach(h => {
   skillsGrid.appendChild(div);
 });
 
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+    menuBtn.setAttribute("aria-expanded", !expanded);
+
+    if (!expanded) {
+      // Abrir
+      mobileMenu.classList.remove("hidden", "menu-exit", "menu-exit-active");
+      mobileMenu.classList.add("menu-enter");
+      requestAnimationFrame(() => {
+        mobileMenu.classList.add("menu-enter-active");
+      });
+    } else {
+      // Cerrar
+      mobileMenu.classList.remove("menu-enter", "menu-enter-active");
+      mobileMenu.classList.add("menu-exit");
+      requestAnimationFrame(() => {
+        mobileMenu.classList.add("menu-exit-active");
+      });
+
+      // Ocultar después de terminar animación
+      mobileMenu.addEventListener(
+        "transitionend",
+        () => {
+          if (mobileMenu.classList.contains("menu-exit-active")) {
+            mobileMenu.classList.add("hidden");
+          }
+        },
+        { once: true }
+      );
+    }
+  });
+
+  // Cerrar menú al dar click en un enlace
+  document.querySelectorAll("#mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      menuBtn.setAttribute("aria-expanded", false);
+      mobileMenu.classList.remove("menu-enter", "menu-enter-active");
+      mobileMenu.classList.add("menu-exit", "menu-exit-active");
+      mobileMenu.addEventListener(
+        "transitionend",
+        () => mobileMenu.classList.add("hidden"),
+        { once: true }
+      );
+    });
+  });
   // --------------------------
   // Footer year dinámico
   // --------------------------
