@@ -1,322 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Mario Luis Rivera Meade</title>
-  <meta name="description" content="Portfolio of Mario Luis Rivera Meade, junior software developer.">
-  <meta name="keywords" content="Developer, Software, Portfolio, Mario Luis Rivera">
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <style>
-    html { scroll-behavior: smooth; }
-    .menu-enter { transform: scaleY(0); transform-origin: top; opacity:0; }
-    .menu-enter-active { transform: scaleY(1); opacity:1; transition: transform 0.3s ease, opacity 0.3s ease; }
-    .menu-exit { transform: scaleY(1); opacity:1; }
-    .menu-exit-active { transform: scaleY(0); opacity:0; transition: transform 0.3s ease, opacity 0.3s ease; }
-    .typed-cursor { font-weight: bold; color: #14B8A6; }
-
-    /* Project hover styles */
-    .project-card {
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .project-card:hover img {
-      transform: scale(1.1);
-    }
-    .project-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(20, 184, 166, 0.85);
-      color: white;
-      opacity: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      transition: opacity 0.3s ease;
-      padding: 1rem;
-    }
-    .project-card:hover .project-overlay {
-      opacity: 1;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Mario Luis Rivera Meade</title>
+    <meta name="description" content="Systems Engineer and Jr. Software Developer specializing in efficiency and scalability.">
+    <link rel="icon" href="favicon.ico">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        .project-card:hover img { transform: scale(1.05); }
+        .glass-effect { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(10px); }
+        .badge-cert { background: linear-gradient(90deg, #14b8a6, #0d9488); }
+        .typed-cursor { font-weight: bold; color: #14B8A6; }
+    </style>
 </head>
-<body class="bg-gray-900 text-gray-200 font-sans">
 
-<!-- Navbar -->
-<nav class="bg-gray-900 text-white shadow-lg">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-    <h1 class="text-xl font-bold text-teal-400">Mario Meade</h1>
-    <ul class="hidden md:flex space-x-6 text-sm">
-      <li><a href="#home" class="nav-link hover:text-teal-400">Home</a></li>
-      <li><a href="#about" class="nav-link hover:text-teal-400">About Me</a></li>
-      <li><a href="#projects" class="nav-link hover:text-teal-400">Projects</a></li>
-      <li><a href="#skills" class="nav-link hover:text-teal-400">Skills</a></li>
-      <li><a href="#experience" class="nav-link hover:text-teal-400">Experience</a></li>
-      <li><a href="#contact" class="nav-link hover:text-teal-400">Contact</a></li>
-      <li><a href="index.html" class="hover:text-teal-400">ES 🇲🇽</a></li>
-    </ul>
-    <button id="menu-btn" class="md:hidden text-teal-400 focus:outline-none text-2xl" aria-expanded="false" aria-controls="mobile-menu">
-      ☰
-    </button>
-  </div>
-  <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-6 pb-4 origin-top">
-    <ul class="flex flex-col space-y-3 text-sm">
-      <li><a href="#home" class="nav-link hover:text-teal-400">Home</a></li>
-      <li><a href="#about" class="nav-link hover:text-teal-400">About Me</a></li>
-      <li><a href="#projects" class="nav-link hover:text-teal-400">Projects</a></li>
-      <li><a href="#skills" class="nav-link hover:text-teal-400">Skills</a></li>
-      <li><a href="#experience" class="nav-link hover:text-teal-400">Experience</a></li>
-      <li><a href="#contact" class="nav-link hover:text-teal-400">Contact</a></li>
-      <li><a href="index.html" class="hover:text-teal-400">ES 🇲🇽</a></li>
-    </ul>
-  </div>
+<body class="bg-gray-900 text-gray-200 font-sans leading-relaxed">
+
+<nav class="fixed w-full z-50 glass-effect border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+        <h1 class="text-xl font-bold bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">Mario Meade</h1>
+        
+        <ul class="hidden md:flex space-x-8 text-sm font-medium items-center">
+            <li><a href="#home" class="hover:text-teal-400 transition-colors">Home</a></li>
+            <li><a href="#projects" class="hover:text-teal-400 transition-colors">Projects</a></li>
+            <li><a href="#experience" class="hover:text-teal-400 transition-colors">Experience</a></li>
+            <li><a href="index.html" class="hover:text-teal-400 transition-colors font-bold text-gray-400">ES 🇲🇽</a></li>
+            <li><a href="#contact" class="hover:text-teal-400 transition-colors text-teal-400 border border-teal-400/30 px-3 py-1 rounded-full">Contact</a></li>
+        </ul>
+
+        <button id="menu-btn" class="md:hidden text-teal-400 text-2xl">☰</button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800 p-6">
+        <ul class="flex flex-col space-y-4">
+            <li><a href="#home" class="mobile-link">Home</a></li>
+            <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#skills" class="mobile-link">Skills</a></li>
+            <li><a href="#experience" class="mobile-link">Experience</a></li>
+            <li><a href="index.html" class="mobile-link font-bold text-gray-400">ES 🇲🇽</a></li>
+            <li><a href="#contact" class="mobile-link text-teal-400">Contact</a></li>
+        </ul>
+    </div>
 </nav>
 
-<!-- Hero -->
-<section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-  <div class="container mx-auto px-6 py-12 text-center">
-    <h2 class="text-5xl md:text-6xl font-bold mb-6 animate-fadeIn">Mario Luis Rivera Meade</h2>
-    <p class="text-xl mb-8 opacity-90 animate-fadeIn">
-        <span id="typed"></span>
-    </p>
-    <div class="flex justify-center space-x-4">
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-    <a href="#projects" class="min-w-[140px] text-center bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
-    View Projects</a>
-    <a href="#contact" class="min-w-[140px] text-center bg-gray-600 hover:bg-gray-500 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
-    Contact</a>
-    <a href="cv/Mario_Meade_CV-ENG.pdf" download class="min-w-[140px] text-center px-6 py-3 bg-green-600 hover:bg-green-500 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
-    Download CV</a>
-</div>
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-teal-900/20 via-gray-900 to-gray-900"></div>
+    
+    <div class="container relative z-10 mx-auto px-6 text-center animate__animated animate__fadeIn">
+        <span class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-widest text-teal-400 uppercase border border-teal-400/30 rounded-full">
+            Available for new challenges
+        </span>
+        <h2 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+            Mario Luis Rivera Meade
+        </h2>
+        <p class="text-xl md:text-2xl mb-10 text-gray-400 max-w-2xl mx-auto">
+            <span id="typed"></span>
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#projects" class="px-8 py-3 bg-teal-500 hover:bg-teal-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-teal-500/20 hover:-translate-y-1">
+                View Portfolio
+            </a>
+            <a href="cv/Mario_Meade_CV-ENG.pdf" download class="px-8 py-3 bg-gray-800 hover:bg-gray-700 text-white font-bold rounded-xl transition-all border border-gray-700 hover:scale-105 transform">
+                Download CV ENG
+            </a>
+        </div>
     </div>
-  </div>
 </section>
 
-<style>
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fadeIn {
-    animation: fadeIn 1s ease-out forwards;
-  }
-</style>
-
-<!-- About Me -->
-<section id="about" class="max-w-4xl mx-auto py-20 px-4 md:px-6">
-  <h3 class="text-3xl font-semibold mb-6 text-teal-400">About Me</h3>
-  <div class="flex flex-col md:flex-row gap-6 items-center">
-    <img src="img/Avatar.png" alt="Avatar" class="rounded-full w-36 h-36 md:w-48 md:h-48 shadow-lg">
-    <p class="leading-relaxed text-gray-300">
-      Computer Systems Engineer with experience in application development, data analysis, and system optimization. I am interested in automation and building scalable software. Passionate about solving problems and learning new technologies.
-    </p>
-  </div>
-</section>
-
-<!-- Projects -->
-<section id="projects" class="bg-gray-800 py-20 px-4 md:px-6">
-  <div class="max-w-6xl mx-auto">
-    <h3 class="text-3xl font-semibold mb-10 text-teal-400">Projects</h3>
-    <div id="proyectos-grid" class="grid md:grid-cols-3 gap-8"></div>
-  </div>
-</section>
-
-<!-- Skills -->
-<section id="skills" class="max-w-6xl mx-auto py-20 px-4 md:px-6">
-  <h3 class="text-3xl font-semibold mb-6 text-teal-400">Skills</h3>
-  <div id="skills-grid" class="grid md:grid-cols-2 gap-6"></div>
-</section>
-
-<!-- Experience -->
-<section id="experience" class="bg-gray-800 py-20 px-4 md:px-6">
-  <div class="max-w-6xl mx-auto">
-    <h3 class="text-3xl font-semibold mb-10 text-teal-400">Experience</h3>
-    <div class="relative border-l border-teal-400 ml-4">
-      <div class="mb-10 ml-6">
-        <h4 class="font-bold text-lg text-teal-300">Aptiv (2023 - 2024)</h4>
-        <p class="text-gray-300 text-sm">Inventory forecast optimization and coordination of multidisciplinary teams.</p>
-      </div>
-      <div class="mb-10 ml-6">
-        <h4 class="font-bold text-lg text-teal-300">DENES (2022 - 2023)</h4>
-        <p class="text-gray-300 text-sm">Health record maintenance and data management using Excel.</p>
-      </div>
+<section id="about" class="py-24 px-4">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+        <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <img src="img/Avatar.png" alt="Avatar Mario Meade" class="relative rounded-full object-cover border-2 border-gray-800 shadow-xl">
+        </div>
+        <div class="text-center md:text-left">
+            <h3 class="text-3xl font-bold mb-4 text-white">About Me</h3>
+            <p class="text-lg text-gray-400 leading-relaxed italic mb-4">
+                "I transform data into decisions and manual processes into automated workflows."
+            </p>
+            <p class="text-gray-300">
+                Computer Systems Engineer. My main focus is creating software that not only works but is <strong>scalable and efficient</strong>. I have practical experience optimizing inventories in industrial settings and managing critical data using SQL and Python.
+            </p>
+        </div>
     </div>
-  </div>
 </section>
 
-<!-- Contact -->
-<section id="contact" class="max-w-4xl mx-auto py-20 px-4 md:px-6 text-center">
-  <h3 class="text-3xl font-semibold mb-6 text-teal-400">Contact</h3>
-  <p class="mb-4">If you want to collaborate or learn more about my work:</p>
-  <div class="space-x-4">
-    <a href="mailto:mariomip98@gmail.com" class="text-teal-400 hover:underline">Email</a>
-    <a href="https://linkedin.com/in/mario-meade-1498241a5" target="_blank" class="text-teal-400 hover:underline">LinkedIn</a>
-    <a href="https://github.com/MipForShort" target="_blank" class="text-teal-400 hover:underline">GitHub</a>
-    <br>
-    <span><p class="text-teal-400 hover:underline"><i>mariomip98@gmail.com</i></p></span>
-  </div>
+<section id="projects" class="bg-gray-800/50 py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+            <div>
+                <h3 class="text-3xl font-bold text-white mb-2">Key Projects</h3>
+                <p class="text-teal-400 font-medium">Real-world solutions and freeCodeCamp certifications</p>
+            </div>
+        </div>
+        <div id="proyectos-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-gray-400 py-8">
-  <span id="footer-year"></span> © Mario Luis Rivera Meade | Junior Software Developer
+<section id="skills" class="py-24 px-4 max-w-6xl mx-auto">
+    <h3 class="text-3xl font-bold mb-12 text-center text-white">Tech Stack</h3>
+    <div id="skills-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
+        </div>
+</section>
+
+<section id="experience" class="bg-gray-800/50 py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+        <h3 class="text-3xl font-bold mb-12 text-teal-400 pl-4">Professional Experience</h3>
+        <div class="space-y-12 border-l-2 border-gray-700 ml-4 pl-8">
+            <div class="relative">
+                <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-teal-500 shadow-[0_0_10px_#14b8a6]"></div>
+                <h4 class="text-xl font-bold text-white">Aptiv <span class="text-gray-500 font-normal text-sm ml-2">2023 — 2024</span></h4>
+                <p class="text-teal-400 text-sm font-semibold mb-2 italic">Inventory Systems Optimization</p>
+                <p class="text-gray-400 leading-relaxed">Inventory forecast optimization and coordination of multidisciplinary teams.</p>
+            </div>
+            <div class="relative">
+                <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-gray-600"></div>
+                <h4 class="text-xl font-bold text-white">DENES <span class="text-gray-500 font-normal text-sm ml-2">2022 — 2023</span></h4>
+                <p class="text-teal-400 text-sm font-semibold mb-2 italic">Data Management</p>
+                <p class="text-gray-400 leading-relaxed">Health record maintenance and data management using Excel.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="contact" class="bg-gray-900 pt-24 pb-12 border-t border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h3 class="text-4xl font-bold mb-6 text-white">Let's Connect</h3>
+        <p class="text-gray-400 mb-10 text-lg">I am interested in opportunities as a Backend Developer, Data Analyst, or Junior Software Engineer.</p>
+        
+        <div class="flex justify-center gap-6 mb-16">
+            <a href="mailto:mariomip98@gmail.com" title="Send Email" class="p-4 bg-gray-800 rounded-full hover:bg-teal-500 transition-all group hover:-translate-y-1 transform">
+                <i class="devicon-google-plain text-2xl group-hover:text-white transition-colors"></i>
+            </a>
+            <a href="https://linkedin.com/in/mario-meade-1498241a5" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile" class="p-4 bg-gray-800 rounded-full hover:bg-teal-500 transition-all group hover:-translate-y-1 transform">
+                <i class="devicon-linkedin-plain text-2xl group-hover:text-white transition-colors"></i>
+            </a>
+            <a href="https://github.com/MipForShort" target="_blank" rel="noopener noreferrer" title="GitHub Profile" class="p-4 bg-gray-800 rounded-full hover:bg-teal-500 transition-all group hover:-translate-y-1 transform">
+                <i class="devicon-github-original text-2xl group-hover:text-white transition-colors"></i>
+            </a>
+        </div>
+        
+        <p class="text-xs text-gray-600 italic">
+            <span id="footer-year"></span> © Mario Luis Rivera Meade — Developed with HTML, Tailwind & Typed.js.
+        </p>
+    </div>
 </footer>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-  new Typed('#typed', {
-    strings: ["Junior Developer", "Passionate about efficiency", "Fan of scalable solutions"],
-    typeSpeed: 50,
-    backSpeed: 40,
-    backDelay: 1500,
-    loop: true,
-    showCursor: true,
-    cursorChar: '|'
-  });
-
-  // Projects (unchanged, names kept same)
-  const proyectos = [
-    {
-      nombre: "mkdocs-lenguaje-c",
-      desc: "Notes and practical C programming examples organized with MkDocs.",
-      link: "https://mipforshort.github.io/mkdocs-lenguaje-c/",
-      tech:["C","MkDocs","Markdown"],
-      img:"screenshots/mkdocs.png"
-    },
-    {
-      nombre: "MipCode",
-      desc: "Markdown notes and personal documentation management.",
-      link:"https://github.com/MipForShort/MipCode",
-      tech:["Obsidian","Python", "C/C++"],
-      img:"screenshots/mipcode.png"
-    },
-    {
-      nombre: "MySQL_Northwind.db",
-      desc:"Implementation and analysis of the Northwind database.",
-      link:"https://github.com/MipForShort/MySQL_Northwind.db",
-      tech:["SQL","MySQL"],
-      img:"screenshots/northwind.png"
-    },
-    {
-      nombre: "Password_Generator",
-      desc:"User-configurable secure password generator.",
-      link:"https://github.com/MipForShort/Password_Generator",
-      tech:["C"],
-      img:"screenshots/password.png"
-    },
-    {
-      nombre: "Gauss_Jordan",
-      desc:"Implementation of Gauss-Jordan method to solve linear equation systems.",
-      link:"https://github.com/MipForShort/Gauss_Jordan",
-      tech:["C"],
-      img:"screenshots/gauss.png"
-    }
-  ];
-
-  const proyectosGrid = document.getElementById("proyectos-grid");
-  proyectos.forEach(p=>{
-    const div=document.createElement("div");
-    div.className="project-card bg-gray-700 rounded-lg shadow overflow-hidden";
-    div.innerHTML=`
-      <img src="${p.img}" alt="${p.nombre}">
-      <div class="p-4">
-        <h4 class="font-bold text-lg mb-2 text-teal-300">${p.nombre}</h4>
-        <p class="text-sm text-gray-300 mb-3">${p.desc}</p>
-        <div class="flex flex-wrap gap-2 mb-3">
-          ${p.tech.map(t=>`<span class="text-xs px-2 py-1 bg-gray-600 rounded">${t}</span>`).join("")}
-        </div>
-        <a href="${p.link}" target="_blank" class="text-teal-400 text-sm hover:underline">View on GitHub</a>
-      </div>
-      <div class="project-overlay">
-        <p class="mb-3 font-semibold">${p.nombre}</p>
-        <a href="${p.link}" target="_blank" class="px-4 py-2 bg-white text-gray-800 rounded hover:bg-gray-200">View Project</a>
-      </div>
-    `;
-    proyectosGrid.appendChild(div);
-  });
-
-  // Skills (unchanged)
-  const habilidades = [
-  {nombre: "Python", icono: "devicon-python-plain colored"},
-  {nombre: "C/C++", icono: "devicon-c-plain colored"},
-  {nombre: "C#", icono: "devicon-csharp-plain colored"},
-  {nombre: "Django", icono: "devicon-django-plain colored"},
-  {nombre: "SQL / MySQL / PostgreSQL", icono: "devicon-mysql-plain colored"},
-  {nombre: "Git / Linux / Excel", icono: "devicon-git-plain colored"}
-];
-
-const skillsGrid = document.getElementById("skills-grid");
-habilidades.forEach(h => {
-  const div = document.createElement("div");
-  div.className = "flex items-center gap-3 bg-gray-800 p-4 rounded-lg shadow hover:shadow-md transition-transform hover:-translate-y-1";
-  div.innerHTML = `
-    <i class="${h.icono} text-3xl"></i>
-    <span class="font-semibold text-gray-200">${h.nombre}</span>
-  `;
-  skillsGrid.appendChild(div);
-});
-
-// Menu toggle (unchanged)
-const menuBtn = document.getElementById("menu-btn");
-const mobileMenu = document.getElementById("mobile-menu");
-
-menuBtn.addEventListener("click", () => {
-  const expanded = menuBtn.getAttribute("aria-expanded") === "true";
-  menuBtn.setAttribute("aria-expanded", !expanded);
-
-  if (!expanded) {
-    mobileMenu.classList.remove("hidden", "menu-exit", "menu-exit-active");
-    mobileMenu.classList.add("menu-enter");
-    requestAnimationFrame(() => {
-      mobileMenu.classList.add("menu-enter-active");
-    });
-  } else {
-    mobileMenu.classList.remove("menu-enter", "menu-enter-active");
-    mobileMenu.classList.add("menu-exit");
-    requestAnimationFrame(() => {
-      mobileMenu.classList.add("menu-exit-active");
+    // Typed.js
+    new Typed('#typed', {
+        strings: ["Junior Software Developer.", "Systems Engineer.", "Automation Specialist.", "Data Analyst."],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 1500,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
     });
 
-    mobileMenu.addEventListener(
-      "transitionend",
-      () => {
-        if (mobileMenu.classList.contains("menu-exit-active")) {
-          mobileMenu.classList.add("hidden");
+    // Projects (keeping tech names as they are in original code)
+    const proyectos = [
+        {
+            nombre: "MySQL Northwind Analysis",
+            desc: "Implementation and analysis of the Northwind database.",
+            link: "https://github.com/MipForShort/MySQL_Northwind.db",
+            tech:["SQL","MySQL"],
+            img:"screenshots/northwind.png",
+            cert: "freeCodeCamp Certified" 
+        },
+        {
+            nombre: "mkdocs-lenguaje-c",
+            desc: "Notes and practical C programming examples organized with MkDocs.",
+            link: "https://mipforshort.github.io/mkdocs-lenguaje-c/",
+            tech:["C","MkDocs","Markdown"],
+            img:"screenshots/mkdocs.png"
+        },
+        {
+            nombre: "MipCode Knowledge Base",
+            desc: "Markdown notes and personal documentation management.",
+            link:"https://github.com/MipForShort/MipCode",
+            tech:["Python", "Obsidian"],
+            img:"screenshots/mipcode.png"
+        },
+        {
+            nombre: "Gauss-Jordan Solver",
+            desc: "Implementation of Gauss-Jordan method to solve linear equation systems.",
+            link:"https://github.com/MipForShort/Gauss_Jordan",
+            tech:["C"],
+            img:"screenshots/gauss.png"
+        },
+        {
+            nombre: "Secure Password Gen",
+            desc: "User-configurable secure password generator.",
+            link:"https://github.com/MipForShort/Password_Generator",
+            tech:["C"],
+            img:"screenshots/password.png"
         }
-      },
-      { once: true }
-    );
-  }
-});
+    ];
 
-document.querySelectorAll("#mobile-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    menuBtn.setAttribute("aria-expanded", false);
-    mobileMenu.classList.remove("menu-enter", "menu-enter-active");
-    mobileMenu.classList.add("menu-exit", "menu-exit-active");
-    mobileMenu.addEventListener(
-      "transitionend",
-      () => mobileMenu.classList.add("hidden"),
-      { once: true }
-    );
-  });
-});
+    const grid = document.getElementById("proyectos-grid");
+    proyectos.forEach(p => {
+        grid.innerHTML += `
+            <div class="project-card bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-teal-500/50 transition-all group flex flex-col h-full shadow-lg">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="${p.img}" alt="${p.nombre}" class="w-full h-full object-cover transition-transform duration-500">
+                    ${p.cert ? `<span class="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-tighter badge-cert text-white px-3 py-1 rounded-full shadow-md">${p.cert}</span>` : ''}
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="font-bold text-xl mb-2 text-white group-hover:text-teal-400 transition-colors">${p.nombre}</h4>
+                    <p class="text-sm text-gray-400 mb-4 flex-grow line-clamp-3">${p.desc}</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        ${p.tech.map(t => `<span class="text-[10px] font-bold px-2 py-1 bg-gray-800 text-teal-400 border border-teal-400/20 rounded-md">${t}</span>`).join("")}
+                    </div>
+                    <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-bold text-teal-400 hover:text-teal-300 group-hover:underline">
+                        Explore Code <span class="ml-2 group-hover:translate-x-1 transform transition-transform">→</span>
+                    </a>
+                </div>
+            </div>
+        `;
+    });
 
-// Footer year
-document.getElementById("footer-year").textContent = new Date().getFullYear();
+    // Skills (using original English names and colored icons)
+    const skills = [
+        {n: "Python", i: "devicon-python-plain colored"},
+        {n: "SQL", i: "devicon-mysql-plain colored"},
+        {n: "C/C++", i: "devicon-c-plain colored"},
+        {n: "C#", i: "devicon-csharp-plain colored"},
+        {n: "Django", i: "devicon-django-plain colored"},
+        {n: "Linux", i: "devicon-linux-plain colored"},
+        {n: "Git", i: "devicon-git-plain colored"},
+        {n: "Excel", i: "devicon-microsoftexcel-plain colored"}
+    ];
+
+    const sGrid = document.getElementById("skills-grid");
+    skills.forEach(s => {
+        sGrid.innerHTML += `
+            <div class="p-6 bg-gray-800/30 border border-gray-800 rounded-xl hover:bg-gray-800 transition-all group shadow hover:shadow-lg">
+                <i class="${s.i} text-5xl mb-3 inline-block group-hover:scale-110 transition-transform"></i>
+                <p class="text-sm font-bold text-gray-400 group-hover:text-white transition-colors">${s.n}</p>
+            </div>
+        `;
+    });
+
+    // Mobile Menu
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+    
+    // Dynamic Year
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
