@@ -2,9 +2,10 @@
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Portafolio | Mario Luis Rivera Meade</title>
     <meta name="description" content="Ingeniero en Sistemas y Desarrollador Software Jr. especializado en eficiencia y escalabilidad.">
+    <meta name="keywords" content="Mario Luis Rivera Meade, ingeniero sistemas, desarrollador software, eficiencia, escalabilidad, proyectos, experiencia, contacto, GitHub, LinkedIn, correo electrónico">
     <link rel="icon" href="favicon.ico">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,10 +13,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
     <style>
+        :root {
+            --primary-color: #14b8a6;
+            --secondary-color: #0d9488;
+        }
+        
         .project-card:hover img { transform: scale(1.05); }
         .glass-effect { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(10px); }
-        .badge-cert { background: linear-gradient(90deg, #14b8a6, #0d9488); }
-        .typed-cursor { font-weight: bold; color: #14B8A6; }
+        .badge-cert { background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); }
+        .typed-cursor { font-weight: bold; color: var(--primary-color); }
     </style>
 </head>
 
