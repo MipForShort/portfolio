@@ -188,10 +188,17 @@
     // Projects (keeping tech names as they are in original code)
     const proyectos = [
         {
+            nombre: "Ecommerce Sales Analytics Pipeline",
+            desc: "Python and Pandas data pipeline for ETL processes, featuring advanced SQL for sales, churn, and supply chain analytics.",
+            link: "https://github.com/MipForShort/ecommerce-sales-analytics-pipeline",
+            tech:["SQL","PostgreSQL","Python","ETL","Data-Analytics"],
+            img:"screenshots/ecommerce.png",
+        },
+        {
             nombre: "MySQL Northwind Analysis",
             desc: "Implementation and analysis of the Northwind database.",
             link: "https://github.com/MipForShort/MySQL_Northwind.db",
-            tech:["SQL","MySQL"],
+            tech:["SQL","MySQL","C"],
             img:"screenshots/northwind.png"
         },
         {
@@ -273,7 +280,7 @@
                         ${p.tech.map(t => `<span class="text-[10px] font-bold px-2 py-1 bg-gray-800 text-teal-400 border border-teal-400/20 rounded-md">${t}</span>`).join("")}
                     </div>
                     <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-bold text-teal-400 hover:text-teal-300 group-hover:underline">
-                        Explore Code <span class="ml-2 group-hover:translate-x-1 transform transition-transform">→</span>
+                        View Certificate <span class="ml-2 group-hover:translate-x-1 transform transition-transform">→</span>
                     </a>
                 </div>
             </div>
