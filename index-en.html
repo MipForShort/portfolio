@@ -102,10 +102,23 @@
         <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
             <div>
                 <h3 class="text-3xl font-bold text-white mb-2">Key Projects</h3>
-                <p class="text-teal-400 font-medium">Real-world solutions and freeCodeCamp certifications</p>
+                <p class="text-teal-400 font-medium">Real-world solutions</p>
             </div>
         </div>
         <div id="proyectos-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </div>
+</section>
+
+<section id="certifications" class="bg-gray-800/50 py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+            <div>
+                <h3 class="text-3xl font-bold text-white mb-2">Certifications</h3>
+                <p class="text-teal-400 font-medium">FreeCodeCamp certifications</p>
+            </div>
+        </div>
+        <div id="certifications-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
     </div>
 </section>
@@ -175,22 +188,6 @@
     // Projects (keeping tech names as they are in original code)
     const proyectos = [
         {
-            nombre: "Python Developer Certification",
-            desc: "Complete certification suite including a Monte Carlo probability simulator and a budget tracking system using OOP.",
-            link: "https://www.freecodecamp.org/certification/mario_rivera_meade/python-v9",
-            tech:["Python", "OOP", "Statistics"],
-            img:"screenshots/python_fcc.png", // Asegúrate de tener una captura de tus proyectos o el logo de Python
-            cert: "freeCodeCamp Certified" 
-        },
-        {
-            nombre: "Relational Database Design",
-            desc: "Advanced SQL certification focused on PostgreSQL, Bash scripting, and relational database schema design.",
-            link: "https://www.freecodecamp.org/certification/mario_rivera_meade/relational-database-v8",
-            tech:["PostgreSQL", "Bash", "SQL"],
-            img:"screenshots/db_fcc.png",
-            cert: "freeCodeCamp Certified" 
-        },
-        {
             nombre: "MySQL Northwind Analysis",
             desc: "Implementation and analysis of the Northwind database.",
             link: "https://github.com/MipForShort/MySQL_Northwind.db",
@@ -203,13 +200,6 @@
             link: "https://mipforshort.github.io/mkdocs-lenguaje-c/",
             tech:["C","MkDocs","Markdown"],
             img:"screenshots/mkdocs.png"
-        },
-        {
-            nombre: "MipCode Knowledge Base",
-            desc: "Markdown notes and personal documentation management.",
-            link:"https://github.com/MipForShort/MipCode",
-            tech:["Python", "Obsidian"],
-            img:"screenshots/mipcode.png"
         },
         {
             nombre: "Gauss-Jordan Solver",
@@ -227,9 +217,50 @@
         }
     ];
 
+    const certifications = [
+        {
+            nombre: "Python Developer Certification",
+            desc: "Complete certification suite including a Monte Carlo probability simulator and a budget tracking system using OOP.",
+            link: "https://www.freecodecamp.org/certification/mario_rivera_meade/python-v9",
+            tech:["Python", "OOP", "Statistics"],
+            img:"screenshots/python_fcc.png", // Asegúrate de tener una captura de tus proyectos o el logo de Python
+            cert: "freeCodeCamp Certified" 
+        },
+        {
+            nombre: "Relational Database Design Certification",
+            desc: "Advanced SQL certification focused on PostgreSQL, Bash scripting, and relational database schema design.",
+            link: "https://www.freecodecamp.org/certification/mario_rivera_meade/relational-database-v8",
+            tech:["PostgreSQL", "Bash", "SQL"],
+            img:"screenshots/db_fcc.png",
+            cert: "freeCodeCamp Certified" 
+        }
+    ];
+
     const grid = document.getElementById("proyectos-grid");
     proyectos.forEach(p => {
         grid.innerHTML += `
+            <div class="project-card bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-teal-500/50 transition-all group flex flex-col h-full shadow-lg">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="${p.img}" alt="${p.nombre}" class="w-full h-full object-cover transition-transform duration-500">
+                    ${p.cert ? `<span class="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-tighter badge-cert text-white px-3 py-1 rounded-full shadow-md">${p.cert}</span>` : ''}
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="font-bold text-xl mb-2 text-white group-hover:text-teal-400 transition-colors">${p.nombre}</h4>
+                    <p class="text-sm text-gray-400 mb-4 flex-grow line-clamp-3">${p.desc}</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        ${p.tech.map(t => `<span class="text-[10px] font-bold px-2 py-1 bg-gray-800 text-teal-400 border border-teal-400/20 rounded-md">${t}</span>`).join("")}
+                    </div>
+                    <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-bold text-teal-400 hover:text-teal-300 group-hover:underline">
+                        Explore Code <span class="ml-2 group-hover:translate-x-1 transform transition-transform">→</span>
+                    </a>
+                </div>
+            </div>
+        `;
+    });
+
+    const grid2 = document.getElementById("certifications-grid");
+    certifications.forEach(p => {
+        grid2.innerHTML += `
             <div class="project-card bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-teal-500/50 transition-all group flex flex-col h-full shadow-lg">
                 <div class="relative h-48 overflow-hidden">
                     <img src="${p.img}" alt="${p.nombre}" class="w-full h-full object-cover transition-transform duration-500">
@@ -256,7 +287,6 @@
         {n: "PostgreSQL", i: "devicon-postgresql-plain colored"},
         {n: "C/C++", i: "devicon-c-plain colored"},
         {n: "C#", i: "devicon-csharp-plain colored"},
-        {n: "Django", i: "devicon-django-plain colored"},
         {n: "Linux", i: "devicon-linux-plain colored"},
         {n: "Bash/Unix", i: "devicon-bash-plain colored"},
         {n: "Git", i: "devicon-git-plain colored"}
