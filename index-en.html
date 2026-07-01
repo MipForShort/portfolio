@@ -34,6 +34,7 @@
         <ul class="hidden md:flex space-x-8 text-sm font-medium items-center">
             <li><a href="#home" class="hover:text-teal-400 transition-colors">Home</a></li>
             <li><a href="#projects" class="hover:text-teal-400 transition-colors">Projects</a></li>
+            <li><a href="#certifications" class="hover:text-teal-400 transition-colors">Certifications</a></li>
             <li><a href="#experience" class="hover:text-teal-400 transition-colors">Experience</a></li>
             <li><a href="index.html" class="hover:text-teal-400 transition-colors font-bold text-gray-400">ES 🇲🇽</a></li>
             <li><a href="#contact" class="hover:text-teal-400 transition-colors text-teal-400 border border-teal-400/30 px-3 py-1 rounded-full">Contact</a></li>
@@ -46,6 +47,7 @@
         <ul class="flex flex-col space-y-4">
             <li><a href="#home" class="mobile-link">Home</a></li>
             <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#certifications" class="mobile-link">Certifications</a></li>
             <li><a href="#skills" class="mobile-link">Skills</a></li>
             <li><a href="#experience" class="mobile-link">Experience</a></li>
             <li><a href="index.html" class="mobile-link font-bold text-gray-400">ES 🇲🇽</a></li>
@@ -185,8 +187,15 @@
         cursorChar: '|'
     });
 
-    // Projects (keeping tech names as they are in original code)
+    // Projects
     const proyectos = [
+        {
+            nombre: "End-to-End Sales Pipeline",
+            desc: "Automated end-to-end data pipeline designed to transform raw data from various sources into structured information, ready for analysis in a PostgreSQL database.",
+            link: "https://github.com/MipForShort/end-to-end-sales-pipeline",
+            tech:["SQL","PostgreSQL","Python","ETL","Data-Engineering"],
+            img:"screenshots/end_to_end.png",
+        },
         {
             nombre: "Ecommerce Sales Analytics Pipeline",
             desc: "Python and Pandas data pipeline for ETL processes, featuring advanced SQL for sales, churn, and supply chain analytics.",
@@ -287,7 +296,7 @@
         `;
     });
 
-    // Skills (using original English names and colored icons)
+    // Skills
     const skills = [
         {n: "Python", i: "devicon-python-plain colored"},
         {n: "SQL", i: "devicon-mysql-plain colored"},

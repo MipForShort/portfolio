@@ -34,6 +34,7 @@
         <ul class="hidden md:flex space-x-8 text-sm font-medium items-center">
             <li><a href="#inicio" class="hover:text-teal-400 transition-colors">Inicio</a></li>
             <li><a href="#proyectos" class="hover:text-teal-400 transition-colors">Proyectos</a></li>
+            <li><a href="#certifications" class="hover:text-teal-400 transition-colors">Certificaciones</a></li>
             <li><a href="#experiencia" class="hover:text-teal-400 transition-colors">Experiencia</a></li>
             <li><a href="index-en.html" class="hover:text-teal-400 transition-colors font-bold text-gray-400">EN 🇺🇸</a></li>
             <li><a href="#contacto" class="hover:text-teal-400 transition-colors text-teal-400 border border-teal-400/30 px-3 py-1 rounded-full">Contacto</a></li>
@@ -46,6 +47,7 @@
         <ul class="flex flex-col space-y-4">
             <li><a href="#inicio" class="mobile-link">Inicio</a></li>
             <li><a href="#proyectos" class="mobile-link">Proyectos</a></li>
+            <li><a href="#certifications" class="mobile-link">Certificaciones</a></li>
             <li><a href="#habilidades" class="mobile-link">Habilidades</a></li>
             <li><a href="#experiencia" class="mobile-link">Experiencia</a></li>
             <li><a href="index-en.html" class="mobile-link font-bold text-gray-400">EN 🇺🇸</a></li>
@@ -187,6 +189,13 @@
 
     // Proyectos (descripciones actualizadas)
     const proyectos = [
+        {
+            nombre: "End-to-End Sales Pipeline",
+            desc: "Pipeline punto-a-punto automatizado, diseñado para transformar datos de varias fuentes en información estructurada, lista para análisis en una base de datos PostgreSQL",
+            link: "https://github.com/MipForShort/end-to-end-sales-pipeline",
+            tech:["SQL","PostgreSQL","Python","ETL","Data-Engineering"],
+            img:"screenshots/end_to_end.png",
+        },
         {
             nombre: "Ecommerce Sales Analytics Pipeline",
             desc: "Pipeline de ingeniería de datos en Python y Pandas para procesos ETL, con consultas SQL avanzadas para análisis de ventas, churn y cadena de suministro.",
